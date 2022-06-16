@@ -1463,15 +1463,10 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #07337e;
-  border-radius: 4px;
+  background: #a23f25;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .primary-background {
   background: #07337e;
 }
