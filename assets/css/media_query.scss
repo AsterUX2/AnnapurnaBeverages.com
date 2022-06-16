@@ -1,0 +1,31 @@
+// ------Mobile Devices -----
+@media (min-width: 320px) and (max-width: 480px) {
+  #banner .carousel .carousel-item {
+    height: 20vh;
+  }
+}
+// ------iPads, Tablets Devices -----
+@media (min-width: 481px) and (max-width: 768px) {
+  #banner .carousel .carousel-caption {
+    left: 25%;
+    right: -6%;
+    bottom: 20%;
+  }
+  #banner .carousel .carousel-item {
+    height: 30vh;
+  }
+}
+// ------Small Screens, Laptops Devices -----
+@media (min-width: 769px) and (max-width: 1024px) {
+  #banner .carousel .carousel-caption {
+    left: 25%;
+    right: -6%;
+    bottom: 20%;
+  }
+  #banner .carousel .carousel-item {
+    height: 40vh;
+  }
+}
+// ------Desktops, Large Screens Devices -----
+@media (min-width: 1025px) and (max-width: 1200px) {
+}

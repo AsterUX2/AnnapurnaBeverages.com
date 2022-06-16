@@ -1,0 +1,27 @@
+@media (min-width: 320px) and (max-width: 480px) {
+  #banner .carousel .carousel-item {
+    height: 20vh;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #banner .carousel .carousel-caption {
+    left: 25%;
+    right: -6%;
+    bottom: 20%;
+  }
+
+  #banner .carousel .carousel-item {
+    height: 30vh;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #banner .carousel .carousel-caption {
+    left: 25%;
+    right: -6%;
+    bottom: 20%;
+  }
+
+  #banner .carousel .carousel-item {
+    height: 40vh;
+  }
+}/*# sourceMappingURL=media_query.css.map */

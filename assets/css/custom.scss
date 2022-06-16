@@ -1,0 +1,1283 @@
+@import "./layout.scss";
+@import "./theme.scss";
+@import "./vars.scss";
+body {
+  font-family: "Roboto", serif;
+  color: $light-color;
+  background-color: $primary-bg-color;
+  overflow-x: hidden;
+}
+.top_header {
+  height: 53px;
+  background: $primary-bg-color;
+  padding: 10px 0px;
+  font-size: $sm;
+  top: 0;
+  position: sticky;
+  z-index: 9;
+  width: 100%;
+  border-bottom: 2px solid $primary-color1;
+  .select_form {
+    backdrop-filter: blur(9px);
+    border-radius: 4px;
+  }
+  .user {
+    text-transform: uppercase;
+    position: relative;
+    .signup {
+      @media (min-width: 320px) and (max-width: 480px) {
+        margin-right: 1rem !important;
+      }
+      ::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        right: 40px;
+        height: 20px;
+        border-right: 2px solid $light-color;
+        margin: 0 5px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    height: 73px;
+  }
+  @media (max-width: 575px) {
+    .justify-content-xs-center {
+      align-items: center;
+      justify-content: center;
+    }
+    .justify-content-xs-between {
+      justify-content: space-between;
+    }
+  }
+  @media (max-width: 390px) {
+    font-size: 12px;
+  }
+}
+// =========banner section style start ============
+.sticky-top {
+  top: 53px;
+  @media (max-width: 991px) {
+    top: 73px;
+  }
+}
+#banner {
+  position: relative;
+  .carousel {
+    .carousel-indicators .active {
+      background-color: $primary-color1;
+    }
+    .carousel-icon {
+      background: rgba(255, 255, 255, 0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (min-width: 320px) and (max-width: 480px) {
+        display: none;
+      }
+    }
+    .carousel-control-next:hover > .carousel-icon i::before,
+    .carousel-control-prev:hover > .carousel-icon i::before {
+      color: $primary-color1;
+    }
+    .carousel-item {
+      height: 70vh;
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
+      .carousel-caption {
+        position: absolute;
+        right: 0%;
+        left: 36%;
+        bottom: 35%;
+        span {
+          font-size: 18px;
+          font-family: $heading-font;
+          line-height: 3;
+          @media (max-width: 575px) {
+            font-size: 14px;
+          }
+        }
+        h5 {
+          font-size: 36px;
+          letter-spacing: 3px;
+          font-family: $heading-font;
+          @media (max-width: 575px) {
+            font-size: 14px;
+          }
+        }
+        p {
+          font-size: 48px;
+          letter-spacing: 3px;
+          font-family: $heading-font;
+          color: $primary-color2;
+          @media (max-width: 768px) {
+            font-size: 32px;
+          }
+          @media (max-width: 575px) {
+            font-size: 16px;
+          }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+          left: 25%;
+          right: -6%;
+          bottom: 20%;
+        }
+        @media (min-width: 481px) and (max-width: 768px) {
+          left: 25%;
+          right: -6%;
+          bottom: 20%;
+        }
+        @media (max-width: 575px) {
+          left: 0%;
+          right: 0%;
+          bottom: 0%;
+          text-align: center;
+        }
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        height: 40vh;
+      }
+      @media (min-width: 481px) and (max-width: 768px) {
+        height: 30vh;
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        height: 25vh;
+      }
+    }
+  }
+}
+
+// =========banner section style end ============
+
+// ==========About Section Style Start===============
+
+#about {
+  background-image: url("../img/about/about-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  .about_description {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 45px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #b1824a;
+    border-radius: 30px;
+    width: auto;
+    height: 47px;
+    color: #b1824a;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+    margin: 0 auto;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 100%;
+      background: #b1824a;
+      z-index: -1;
+      transition: width 300ms ease-in-out;
+    }
+
+    &:hover {
+      color: #fff;
+      border: 2px solid transparent;
+      &:after {
+        width: 100%;
+      }
+      > i {
+        animation: fadeInLeft;
+        animation-duration: 1s;
+      }
+    }
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+// ==========About Section Style End===============
+
+// ==========Collection Section Style Start===============
+
+#collection {
+  background: url("../img/collections/collection_bg.png") rgba(0, 0, 0, 0.6);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  .card {
+    background: rgba(247, 248, 250, 0.05);
+    box-shadow: 1px 2px 10px rgba(162, 63, 37, 0.15),
+      32px 32px 100px rgba(242, 199, 69, 0.05);
+    backdrop-filter: blur(21.7463px);
+
+    h5::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      height: 20px;
+      border-right: 2px solid $primary-color1;
+      margin: 0 5px;
+      @media (min-width: 769px) and (max-width: 1024px) {
+        top: 26px;
+        left: 12px;
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #b1824a;
+      border-radius: 30px;
+      width: auto;
+      height: 47px;
+      color: #b1824a;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 150ms ease-in-out;
+      margin: 0 auto 0 0;
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        background: #b1824a;
+        z-index: -1;
+        transition: width 300ms ease-in-out;
+      }
+
+      &:hover {
+        color: #fff;
+        border: 2px solid transparent;
+
+        &:after {
+          width: 100%;
+        }
+        > i {
+          animation: fadeInLeft;
+          animation-duration: 0.5s;
+        }
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      padding: 25px;
+    }
+  }
+  .Whisky-img img:hover {
+    animation: pulse;
+    animation-duration: 2s;
+  }
+}
+
+// ==========Collection Section Style End===============
+
+// =======testimonial-section style start ==========
+
+#testimonials {
+  background: url("../img/testimonials/annapurna_range.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  position: relative;
+  .section-title {
+    text-align: left !important;
+    p::after {
+      left: calc(50% - 50%) !important;
+    }
+  }
+  .t-card {
+    background: url("../img/testimonials/whisky_bottle.png")
+      rgba(177, 130, 74, 0.8);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 1.8125rem 1.125rem;
+    border-radius: 1.25rem;
+    color: $primary-bg-color;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-align: justify;
+    margin-top: -3%;
+    @media (max-width: 991px) {
+      margin-top: -2%;
+    }
+    i {
+      font-size: 1.6rem;
+      color: $primary-bg-color;
+    }
+    span {
+      .bi-quote::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 1.5625rem solid transparent;
+    border-right: 1.5625rem solid transparent;
+    border-top: 1.25rem solid rgba(177, 130, 74, 0.8);
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+  }
+  .testimonial_subtitle {
+    .bi-star-fill::before {
+      color: $primary-color2;
+    }
+  }
+  .controls {
+    margin-left: 14px;
+    .btn {
+      width: 40px;
+      height: 40px;
+      line-height: 1.5;
+      color: $light-color !important;
+      border-radius: 50% !important;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 9px 12px;
+      border: none;
+      &:hover {
+        background-color: $primary-color1;
+        > .bi-arrow-right::before {
+          animation: heartBeat;
+          animation-duration: 2s;
+        }
+        > .bi-arrow-left::before {
+          animation: heartBeat;
+          animation-duration: 2s;
+        }
+      }
+    }
+  }
+
+  .snowflake {
+    --size: 1vw;
+    width: var(--size);
+    height: var(--size);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    overflow-x: hidden;
+    // color: #fff;
+    // font-size: 1em;
+    // font-family: Arial;
+    // text-shadow: 0 0 1px #000;
+  }
+
+  @keyframes snowfall {
+    0% {
+      transform: translate3d(var(--left-ini), 0, 0);
+    }
+    100% {
+      transform: translate3d(var(--left-end), 65vh, 0);
+    }
+  }
+
+  @keyframes snowfall2 {
+    0% {
+      transform: translate3d(var(--left-ini), 0, 0);
+    }
+    100% {
+      transform: translate3d(var(--left-end), 40vh, 0);
+    }
+  }
+
+  @for $i from 1 through 50 {
+    .snowflake:nth-child(#{$i}) {
+      --size: #{random(5) * 0.2}vw;
+      --left-ini: #{random(20) - 10}vw;
+      --left-end: #{random(20) - 10}vw;
+      left: #{random(92)}vw;
+      animation-delay: -#{random(10)}s;
+
+      @media screen and (min-width: 992px) {
+        animation: snowfall2 #{5 + random(10)}s linear infinite;
+      }
+      @media screen and (max-width: 991px) {
+        animation: snowfall #{5 + random(10)}s linear infinite;
+      }
+    }
+  }
+
+  /* added small blur every 6 snowflakes*/
+  .snowflake:nth-child(6n) {
+    filter: blur(1px);
+  }
+}
+// =======testimonial-section style end ==========
+
+// ========opening_hours style start========
+
+.opening_hours {
+  background: url("../img/opening_hours/annapurna_store.png") rgba(0, 0, 0, 0.6);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  h1 {
+    color: $primary-color2;
+    font-weight: 600;
+    @media (max-width: 575px) {
+      text-align: center;
+    }
+  }
+  .opening_details {
+    display: flex;
+    text-align: center;
+  }
+  .map {
+    width: 100%;
+    height: 400px;
+    filter: grayscale(50%) invert(92%) contrast(83%);
+  }
+  p {
+    @media (max-width: 575px) {
+      text-align: center;
+    }
+  }
+}
+
+// ========opening_hours style End========
+
+#footer {
+  .footer-top {
+    .image-right {
+      img {
+        width: 150px;
+        @keyframes animate {
+          0% {
+            transform: translateY(-50px);
+            opacity: 0.5;
+          }
+
+          100% {
+            transform: translateY(0px);
+            opacity: 0.1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------Pre-loader Css Start ------------
+
+.pre-load {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-bg-color;
+  min-height: 100vh;
+  margin: auto;
+  padding-top: 35vh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 999;
+  #beer,
+  #cocktail,
+  #whisky {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  /*BEER*/
+  #glass {
+    width: 50%;
+    height: 60%;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $beer;
+    border-radius: 0.2em 0.2em 2em 2em;
+    border-style: solid;
+    border-color: $beer-glass;
+    border-width: 0.6em 0.5em 1.1em 0.5em;
+    .foam.drip {
+      animation-name: beerDrip;
+      animation-fill-mode: forwards;
+      &:nth-child(1) {
+        top: -0.8em;
+        left: -1em;
+        width: 0.7em;
+        height: 0em;
+        border-radius: 0.6em;
+        animation-duration: 10s;
+      }
+      &:nth-child(2) {
+        top: 0.4em;
+        left: 0.5em;
+        width: 1.2em;
+        height: 0em;
+        border-radius: 0.6em;
+        animation-duration: 7s;
+      }
+    }
+    .foam {
+      background-color: $beer-foam;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 1;
+      &:nth-child(1) {
+        top: -1.8em;
+        left: -1em;
+        width: 3em;
+        height: 3em;
+      }
+      &:nth-child(2) {
+        top: -2em;
+        left: 1.4em;
+        width: 3.7em;
+        height: 3.7em;
+      }
+      &:nth-child(3) {
+        top: -1.8em;
+        left: 4.4em;
+        width: 3em;
+        height: 3em;
+        &:after {
+          content: "";
+          display: block;
+        }
+      }
+      &:nth-child(4) {
+        top: -2.7em;
+        width: 3em;
+        height: 3em;
+      }
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background-color: $beer-bubble;
+      animation-name: beerBubble;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      opacity: 0;
+      transform: translateY(0em);
+      top: 6.6em;
+      &:nth-child(1) {
+        animation-duration: 1s;
+        left: 4em;
+        width: 0.4em;
+        height: 0.4em;
+      }
+      &:nth-child(2) {
+        animation-duration: 1.2s;
+        left: 2em;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      &:nth-child(3) {
+        animation-duration: 1.4s;
+        left: 3.2em;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      &:nth-child(4) {
+        animation-duration: 0.8s;
+        left: 5.1em;
+        width: 0.3em;
+        height: 0.3em;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 1.4em;
+      height: 4em;
+      background-color: transparent;
+      border: 0.7em solid #e29121;
+      border-radius: 0 1.3em 1.3em 0;
+      position: absolute;
+      top: 12%;
+      left: 100%;
+    }
+  }
+  #details {
+    .glassEffect {
+      position: absolute;
+      background-color: $beer-glass-detail;
+      &:nth-child(1) {
+        width: 0.4em;
+        height: 1.1em;
+        top: 5.9em;
+        left: 8.4em;
+        border-radius: 0.6em;
+      }
+      &:nth-child(2) {
+        width: 0.4em;
+        height: 3.2em;
+        top: 7.4em;
+        left: 8.4em;
+        border-radius: 0.6em;
+      }
+    }
+  }
+  @keyframes beerDrip {
+    0% {
+      height: 0em;
+    }
+    100% {
+      height: 5em;
+    }
+  }
+  @keyframes beerBubble {
+    0% {
+      transform: translateY(0em);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-6.5em);
+      opacity: 1;
+    }
+  }
+  /*END OF BEER*/
+
+  /*COKTAIL*/
+  #cocktailglass {
+    position: absolute;
+    width: 5.5em;
+    height: 11em;
+    bottom: -5px;
+    left: 50%;
+    transform: translate3d(-50%, -0.2em, 0em) perspective(20em) rotateX(45deg);
+    border-style: solid;
+    border-color: $cocktail-glass;
+    border-width: 0.2em 0.2em 0.8em 0.2em;
+    border-radius: 0.1em 0.1em 3em 3em;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 30%,
+      $cocktail1 50%,
+      $cocktail2 50%,
+      $cocktail2 80%,
+      $cocktail1 30%,
+      $cocktail3 80%,
+      $cocktail3 100%
+    );
+    box-shadow: 0em 0em 0.1em $cocktail-glass;
+    opacity: 0.9;
+  }
+  #glassfoot {
+    position: absolute;
+    bottom: 0;
+    transform: translate3d(-50%, 0em, 0em);
+    background-color: $cocktail-glass;
+    width: 3em;
+    height: 0.5em;
+    left: 50%;
+    border-radius: 1em 1em 0em 0em;
+  }
+  #straw {
+    position: absolute;
+    top: 0;
+    transform: rotate(-15deg);
+    background-color: $straw;
+    width: 0.4em;
+    height: 11em;
+    left: 40%;
+    &:before,
+    &:after {
+      display: block;
+      content: "";
+      height: 100%;
+      width: 0.1em;
+      background-color: $straw-stripe;
+      position: absolute;
+      top: 0;
+    }
+    &:before {
+      left: 0.03em;
+    }
+    &:after {
+      left: 0.24em;
+    }
+  }
+  #cocktailbubble {
+    div {
+      position: absolute;
+      background-color: $cocktail1;
+      width: 0.2em;
+      height: 0.2em;
+      border-radius: 50%;
+      bottom: 7.3em;
+      animation-name: cocktailbubble;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      &:nth-child(1) {
+        left: 4.3em;
+        animation-duration: 0.28s;
+      }
+      &:nth-child(2) {
+        left: 4.9em;
+        animation-duration: 0.32s;
+      }
+      &:nth-child(3) {
+        left: 5.3em;
+        animation-duration: 0.4s;
+      }
+      &:nth-child(4) {
+        left: 6.6em;
+        animation-duration: 0.37s;
+      }
+      &:nth-child(5) {
+        left: 7em;
+        animation-duration: 0.28s;
+      }
+      &:nth-child(6) {
+        left: 8em;
+        animation-duration: 0.35s;
+      }
+      &:nth-child(7) {
+        left: 6em;
+        animation-duration: 0.25s;
+      }
+      &:nth-child(8) {
+        left: 6.3em;
+        animation-duration: 0.38s;
+      }
+    }
+  }
+  #cocktaildetail {
+    div {
+      position: absolute;
+      left: 8.5em;
+      width: 0.2em;
+      background-color: $cocktail-glass;
+      border-radius: 3em;
+      transform: rotate(-8deg);
+
+      &:nth-child(1) {
+        height: 0.6em;
+        bottom: 8em;
+        left: 8.2em;
+      }
+      &:nth-child(2) {
+        height: 4.3em;
+        bottom: 3.4em;
+        left: 8.6em;
+      }
+    }
+  }
+  @keyframes cocktailbubble {
+    0% {
+      bottom: 7.3em;
+      opacity: 0.8;
+    }
+    100% {
+      bottom: 8.3em;
+      opacity: 0;
+    }
+  }
+  /*END OF COKTAIL*/
+
+  /*WHISKY*/
+  #whisky {
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3em;
+      color: #4d4d4d;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      position: absolute;
+      top: 2em;
+      opacity: 0;
+      transition-duration: 0.3s;
+      font-size: 0.8em;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+  #whiskyglass {
+    position: absolute;
+    width: 7em;
+    height: 6.3em;
+    bottom: 0.5em;
+    left: 50%;
+    transform: translate3d(-50%, 0em, 0em);
+    border-color: $whisky-glass;
+    border-style: solid;
+    border-width: 0.2em 0.3em 1em 0.3em;
+    border-radius: 0em 0em 1.9em 1.9em;
+    z-index: 1;
+  }
+  #whiskycontent {
+    position: absolute;
+    width: 7.2em;
+    height: 3em;
+    bottom: 1.2em;
+    left: 50%;
+    transform: translate3d(-50%, 0em, 0em);
+    background-color: $whisky;
+    z-index: 0;
+    border-radius: 0 0 1em 1em;
+  }
+  .ice {
+    position: absolute;
+    border-radius: 0.3em;
+    background-color: $ice;
+    opacity: 0.5;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    &:nth-child(1) {
+      animation-name: ice1;
+      animation-duration: 8s;
+      top: 0em;
+      left: 0em;
+      width: 2.5em;
+      height: 2.5em;
+      transform: translate3d(0.6em, -0.7em, 0em) rotate(19deg);
+    }
+    &:nth-child(2) {
+      animation-name: ice2;
+      animation-duration: 7s;
+      top: 0em;
+      left: 0em;
+      width: 1.8em;
+      height: 1.8em;
+      transform: translate3d(3.1em, -0.4em, 0em) rotate(-29deg);
+    }
+  }
+  .whiskydetail {
+    position: absolute;
+    width: 0.3em;
+    background-color: $whisky-glass;
+    border-radius: 3em;
+    left: 6.2em;
+    &:nth-child(1) {
+      height: 0.7em;
+      top: -3em;
+    }
+    &:nth-child(2) {
+      height: 3.7em;
+      top: -1.8em;
+    }
+  }
+
+  @keyframes ice1 {
+    0% {
+      transform: translate3d(0.6em, -0.7em, 0em) rotate(19deg);
+    }
+    100% {
+      transform: translate3d(0.75em, -1em, 0em) rotate(37deg);
+    }
+  }
+  @keyframes ice2 {
+    0% {
+      transform: translate3d(3.1em, -0.4em, 0em) rotate(-29deg);
+    }
+    100% {
+      transform: translate3d(2.8em, 0em, 0em) rotate(-50deg);
+    }
+  }
+  @keyframes OMGmelt {
+    0% {
+    }
+    100% {
+    }
+  }
+  /*END OF WHISKY*/
+  .status {
+    display: flex;
+    animation: fadeIn $dur1 linear forwards;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .status__dot {
+      animation: appear1 $dur1 $dur1 steps(1, start) infinite;
+      display: inline-block;
+    }
+    .status__dot:nth-child(2) {
+      animation: appear2 $dur1 $dur1 steps(1, start) infinite;
+    }
+    .status__dot:nth-child(3) {
+      animation: appear3 $dur1 $dur1 steps(1, start) infinite;
+    }
+  }
+}
+@keyframes fadeIn {
+  from,
+  67% {
+    opacity: 0;
+  }
+  83.3%,
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appear1 {
+  from {
+    visibility: hidden;
+  }
+  33%,
+  to {
+    visibility: visible;
+  }
+}
+@keyframes appear2 {
+  from,
+  33% {
+    visibility: hidden;
+  }
+  67%,
+  to {
+    visibility: visible;
+  }
+}
+@keyframes appear3 {
+  from,
+  67% {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+// =======Our Story ======
+#story {
+  .section-title {
+    text-align: left !important;
+    p::after {
+      left: calc(50% - 50%) !important;
+    }
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+// ==========TErms & Conditions ===
+.card_section {
+  background: url(../img/card_bg.jpg) rgba(6, 5, 1, 0.9);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+
+  .card {
+    background: rgba(247, 248, 250, 0.05);
+    box-shadow: 1px 2px 10px rgba(162, 63, 37, 0.15),
+      32px 32px 100px rgba(242, 199, 69, 0.05);
+    backdrop-filter: blur(21.7463px);
+    transition: 0.3s all ease-in-out;
+    height: 400px !important;
+
+    h5 {
+      color: $primary-color1;
+      font-weight: 600;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 42px;
+        left: 20px;
+        height: 20px;
+        border-right: 2px solid $primary-color1;
+        margin: 0 5px;
+      }
+    }
+    h4 {
+      font-size: 20px;
+      color: $primary-color1;
+      font-weight: 600;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: -20px;
+        height: 20px;
+        border-right: 2px solid $primary-color1;
+        margin: 0 5px;
+      }
+    }
+    p {
+      text-align: left;
+    }
+  }
+  .overflow {
+    overflow: hidden;
+    &:hover {
+      overflow-y: scroll;
+    }
+  }
+}
+
+// ========Modal=========
+.modal {
+  background: url(../img/opening_hours/annapurna_store.png) rgba(6, 5, 1, 0.6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  .modal-dialog {
+    // max-width: 1000px !important;
+    .modal-content {
+      background: rgba(247, 248, 250, 0.05) !important;
+      box-shadow: 1px 2px 10px rgba(162, 63, 37, 0.15),
+        32px 32px 100px rgba(242, 199, 69, 0.05);
+      backdrop-filter: blur(21.7463px);
+      border: none !important;
+      .modal-header {
+        justify-content: center !important;
+        .modal-title {
+          font-size: 24px;
+          font-family: "Roboto";
+          color: $primary-color1;
+        }
+        .btn-close {
+          color: $light-color !important;
+          font-size: 24px;
+        }
+      }
+      .modal-body {
+        text-align: center;
+        padding: 3rem !important;
+        line-height: 40px;
+      }
+      .modal-footer {
+        justify-content: center;
+        gap: 50px;
+        .modal-btn-yes {
+          // border: 2px solid $primary-button-color !important;
+          background: rgba(247, 248, 250, 0.05);
+          box-shadow: -6.22302px -6.22302px 18.6691px -5px #282a2d,
+            6.22302px 6.22302px 18.6691px #000000;
+          color: #e29121;
+          &:hover {
+            // background-color: #b1824a !important;
+            color: $light-color;
+            box-shadow: inset -6.22302px -6.22302px 6.22302px -5px #3b4451,
+              inset 3.73381px 3.73381px 6.22302px #000000;
+          }
+        }
+        .modal-btn-no {
+          // border: 2px solid $primary-button-color !important;
+          background: rgba(247, 248, 250, 0.05);
+          box-shadow: -6.22302px -6.22302px 18.6691px -5px #282a2d,
+            6.22302px 6.22302px 18.6691px #000000;
+          color: $danger-color;
+          &:hover {
+            // background-color: $primary-color1 !important;
+            box-shadow: inset -6.22302px -6.22302px 6.22302px -5px #3b4451,
+              inset 3.73381px 3.73381px 6.22302px #000000;
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------Place order-------
+.order {
+  .php-email-form {
+    width: 100%;
+    padding: 30px;
+    background: #0b0a09;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    .form-group {
+      padding-bottom: 8px;
+      .form-control {
+        .form-check-input {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      background: #161616;
+      box-shadow: -6.22302px -6.22302px 18.6691px -5px #282a2d,
+        6.22302px 6.22302px 18.6691px #000000;
+      border-radius: 12.446px;
+      min-height: 160px;
+      color: #cedbdc;
+      padding: 20px;
+      column-gap: 20px;
+      text-align: left;
+      word-break: break-all;
+      width: auto;
+      .icon {
+        background: #161616;
+        box-shadow: -6.22302px -6.22302px 18.6691px -5px #282a2d,
+          6.22302px 6.22302px 18.6691px #000000;
+        border-radius: 12.446px;
+        padding: 15px;
+      }
+      .info_details {
+        h2 {
+          font-size: 22px;
+          font-family: "Roboto";
+        }
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+    .form-group {
+      .form-select {
+        background: #161616;
+        box-shadow: -6.22302px -6.22302px 18.6691px -5px #282a2d,
+          6.22302px 6.22302px 18.6691px #000000;
+        border-radius: 12.446px;
+        border: none;
+        padding: 0.375rem 0.75rem;
+        color: #cedbdc;
+        font-size: 12px;
+        height: 50px;
+        position: relative;
+      }
+      .value-button {
+        display: inline-block;
+        margin: 0px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        padding: 11px 0;
+        background: #161616;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      #decrease {
+        margin-right: -4px;
+        border-radius: 8px 0 0 8px;
+        &:hover {
+          box-shadow: inset -6.22302px -6.22302px 6.22302px -5px #3b4451,
+            inset 3.73381px 3.73381px 6.22302px #000000;
+        }
+      }
+      #increase {
+        margin-left: -4px;
+        border-radius: 0 8px 8px 0;
+        &:hover {
+          box-shadow: inset -6.22302px -6.22302px 6.22302px -5px #3b4451,
+            inset 3.73381px 3.73381px 6.22302px #000000;
+        }
+      }
+      #input-wrap {
+        margin: 0px;
+        padding: 0px;
+      }
+      input#number {
+        text-align: center;
+        border: none;
+        color: #cedbdc;
+        margin: 0px;
+        width: 50px;
+        height: 50px;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .form-check {
+        padding-left: 0.5rem !important;
+      }
+    }
+    .error-message {
+      display: none;
+      color: #fff;
+      background: #b7472a;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+      br + br {
+        margin-top: 25px;
+      }
+    }
+    .sent-message {
+      display: none;
+      color: #fff;
+      background: #18d26e;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+    .loading {
+      display: none;
+      background: #fff;
+      text-align: center;
+      padding: 15px;
+      &:before {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px -6px 0;
+        border: 3px solid #18d26e;
+        border-top-color: #eee;
+        -webkit-animation: animate-loading 1s linear infinite;
+        animation: animate-loading 1s linear infinite;
+      }
+    }
+    input {
+      background: #161616;
+      box-shadow: inset -6.22302px -6.22302px 6.22302px #282a2d,
+        inset 3.73381px 3.73381px 6.22302px #000000;
+      font-size: 14px;
+      height: 50px;
+    }
+
+    .btn {
+      background: #161616;
+      box-shadow: -6.22302px -6.22302px 18.6691px -5px #1a1b1d,
+        6.22302px 6.22302px 18.6691px #000000;
+      border-radius: 12.446px;
+      padding: 10px 40px;
+      color: #cedbdc;
+      transition: 0.4s;
+      &:hover {
+        box-shadow: inset -6.22302px -6.22302px 6.22302px -5px #3b4451,
+          inset 3.73381px 3.73381px 6.22302px #000000;
+      }
+    }
+  }
+}
